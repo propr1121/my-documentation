@@ -2,7 +2,7 @@
 title: Home
 layout: home
 ---
-# Welcome to Stream Systems Documentation Suite! 🚀
+# Welcome to our Documentation Suite! 🚀
 
 {: .fs-9 }
 
