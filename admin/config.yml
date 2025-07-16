@@ -1,10 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: propr1121/my-documentation
   branch: main
-  squash_merges: true
-
-# Publish mode - use editorial workflow for content review
-publish_mode: editorial_workflow
 
 # Media folder for uploading images
 media_folder: "assets/images/uploads"
