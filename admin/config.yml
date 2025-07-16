@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+  branch: main
+  squash_merges: true
+
+# Publish mode - use editorial workflow for content review
+publish_mode: editorial_workflow
+
+# Media folder for uploading images
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# Site configuration
+site_url: https://propr1121.github.io/my-documentation
+display_url: https://propr1121.github.io/my-documentation
+
+collections:
+  # Site Configuration
+  - name: "config"
+    label: "Site Configuration"
+    editor:
+      preview: false
+    files:
+      - label: "Site Settings"
+        name: "config"
+        file: "_config.yml"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Site URL", name: "url", widget: "string" }
+
+  # Homepage
+  - name: "pages"
+    label: "Pages"
+    editor:
+      preview: false
+    files:
+      - label: "Homepage"
+        name: "index"
+        file: "index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "home" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  # Documentation Posts
+  - name: "posts"
+    label: "Documentation"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "default" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Navigation Order", name: "nav_order", widget: "number", required: false }
+      - { label: "Parent Page", name: "parent", widget: "string", required: false }
+      - { label: "Has Children", name: "has_children", widget: "boolean", default: false, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
