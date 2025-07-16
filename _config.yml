@@ -1,9 +1,7 @@
-title: My Documentation Site
+title: "Stream Systems "
 description: A modern documentation site built with Just the Docs
 theme: just-the-docs
-
 url: https://propr1121.github.io/my-documentation
-
 aux_links:
-  "View on GitHub":
-    - "https://github.com/propr1121/my-documentation"
+  View on GitHub:
+    - https://github.com/propr1121/my-documentation
