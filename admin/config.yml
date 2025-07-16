@@ -1,13 +1,13 @@
 backend:
-  name: github
+  name: git-gateway
   repo: propr1121/my-documentation
   branch: main
 
-# Media folder for uploading images
+# Media folder for uploading images  
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
-# Site configuration
+# Site configuration - this will work from Netlify CMS
 site_url: https://propr1121.github.io/my-documentation
 display_url: https://propr1121.github.io/my-documentation
 
@@ -41,7 +41,7 @@ collections:
           - { label: "Body", name: "body", widget: "markdown" }
 
   # Documentation Posts
-  - name: "posts"
+  - name: "posts"  
     label: "Documentation"
     folder: "_posts"
     create: true
