@@ -2,8 +2,7 @@
 
 > **Comprehensive technical documentation for Stream Systems financial technology platform, specializing in inter-dealer brokerage services and automated trading infrastructure.**
 
-[![Jekyll Build](https://img.shields.io/badge/Jekyll-4.2.2-red.svg)](https://jekyllrb.com/)
-[![Just the Docs](https://img.shields.io/badge/Theme-Just%20the%20Docs-blue.svg)](https://just-the-docs.github.io/just-the-docs/)
+
 [![Documentation Health](https://img.shields.io/badge/Docs-100%25%20Coverage-green.svg)](#documentation-coverage)
 
 ## 🏢 About Stream Systems LLC
