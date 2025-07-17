@@ -1,13 +1,13 @@
 ---
-title: Home
+title: Executive Summary
 layout: home
 ---
 # Welcome to our Documentation Suite! 🚀
 
 {: .fs-9 }
 
-This is your new documentation site built with Just the Docs! You can easily customize this content and add your own documentation pages.
-{: .fs-6 .fw-300 }
+This is your new documentation suite built to 
+{: .fs-6 .fw-300 } support the development and maintenance of Stream Systems tools and infrastructure.
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View on GitHub](https://github.com/propr1121/my-documentation){: .btn .fs-5 .mb-4 .mb-md-0 }
