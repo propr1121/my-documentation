@@ -235,8 +235,6 @@ This documentation is proprietary and confidential to Stream Systems LLC. All ri
 ## 🏷️ Credits
 
 - **Documented and developed by**: [Jacarenda Labs](https://jacarendalabs.com)
-- **Theme**: [Just the Docs](https://just-the-docs.github.io/just-the-docs/) by pmarsceill
-- **Built with**: [Jekyll](https://jekyllrb.com/) static site generator
 - **Hosted on**: GitHub Pages
 
 ---
