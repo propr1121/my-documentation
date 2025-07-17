@@ -1,0 +1,103 @@
+//
+// Stream Systems LLC Color Scheme
+// Professional financial technology color palette
+//
+
+// Primary colors
+$blue-000: #f8faff !default;        // Very light blue background
+$blue-100: #e6f2ff !default;        // Light blue
+$blue-200: #c2e0ff !default;        // Medium light blue
+$blue-300: #7db3f0 !default;        // Medium blue
+$blue-400: #4a90e2 !default;        // Primary blue
+$blue-500: #2563eb !default;        // Strong blue
+$blue-600: #1d4ed8 !default;        // Dark blue
+$blue-700: #1e40af !default;        // Very dark blue
+
+// Gray scale
+$grey-dk-000: #f8f9fa !default;     // Lightest gray
+$grey-dk-100: #eff1f3 !default;     // Light gray
+$grey-dk-200: #c9c9c9 !default;     // Medium light gray
+$grey-dk-250: #9ea0a4 !default;     // Medium gray
+$grey-dk-300: #5c5c5c !default;     // Dark gray
+$grey-dk-400: #333333 !default;     // Very dark gray
+
+// White and black
+$white: #ffffff !default;
+$black: #000000 !default;
+
+// Success, warning, error colors
+$green-000: #f0fff4 !default;
+$green-100: #dcffe4 !default;
+$green-200: #9ae6b4 !default;
+$green-300: #68d391 !default;
+
+$yellow-000: #fffef0 !default;
+$yellow-100: #fff9c4 !default;
+$yellow-200: #fed7aa !default;
+$yellow-300: #fbb040 !default;
+
+$red-000: #fff5f5 !default;
+$red-100: #fed7d7 !default;
+$red-200: #fc8181 !default;
+$red-300: #e53e3e !default;
+
+// Purple (for accents)
+$purple-000: #faf5ff !default;
+$purple-100: #e9d8fd !default;
+$purple-200: #d6bcf0 !default;
+$purple-300: #b794f6 !default;
+
+//
+// Color scheme mappings
+//
+
+// Body
+$body-background-color: $white !default;
+$body-text-color: $grey-dk-300 !default;
+$body-heading-color: $blue-600 !default;
+
+// Header
+$header-background-color: $blue-600 !default;
+$header-text-color: $white !default;
+
+// Navigation
+$nav-background-color: $blue-000 !default;
+$nav-text-color: $blue-600 !default;
+$nav-link-color: $blue-500 !default;
+
+// Sidebar
+$sidebar-color: $grey-dk-000 !default;
+$search-background-color: $white !default;
+$search-result-preview-color: $grey-dk-250 !default;
+
+// Main content
+$main-content-wrap-background-color: $white !default;
+$content-background-color: $white !default;
+
+// Links
+$link-color: $blue-500 !default;
+$link-hover-color: $blue-600 !default;
+
+// Buttons
+$btn-primary-color: $blue-500 !default;
+$border-color: $grey-dk-200 !default;
+
+// Code
+$code-background-color: $grey-dk-000 !default;
+$code-color: $grey-dk-300 !default;
+
+// Table
+$table-background-color: $white !default;
+$table-header-background-color: $grey-dk-000 !default;
+
+// Feedback colors
+$feedback-color: $yellow-300 !default;
+$error-color: $red-300 !default;
+$success-color: $green-300 !default;
+
+// Focus
+$focus-color: $blue-300 !default;
+
+// Footer
+$footer-background-color: $grey-dk-400 !default;
+$footer-text-color: $white !default; 

@@ -1,7 +1,41 @@
-title: assets/images/uploads/streamlogo_transparent_bandw.png
-description: A modern documentation site built with Just the Docs
+title: Stream Systems
+description: >-
+  Documentation suite for Stream Systems LLC - Financial technology solutions 
+  for inter-dealer brokerage services and automated trading platforms.
+
+# Logo configuration removed - using text title instead
+# logo: "/assets/images/uploads/streamlogo_transparent_bandw.png"
+
+# Theme settings
 theme: just-the-docs
+
+# Site settings
 url: https://propr1121.github.io/my-documentation
+baseurl: ""
+
+# Navigation and footer
 aux_links:
+  Stream Systems Website:
+    - "http://www.streamsystems.io"
   View on GitHub:
     - https://github.com/propr1121/my-documentation
+
+# Footer content - completely override theme footer
+footer_content: ""
+
+# Search settings
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 2
+  preview_words_before: 3
+  preview_words_after: 3
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+
+# Color scheme - using default with custom overrides
+color_scheme: nil
+
+# Enable/disable components
+back_to_top: true
+back_to_top_text: "Back to top"

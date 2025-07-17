@@ -1,0 +1,38 @@
+{% comment %}
+Freshness Indicator Component
+Shows last updated date with color coding:
+- Green: Updated within 90 days (3 months)
+- Yellow: Updated 90-180 days ago (3-6 months)
+- Red: Updated 180+ days ago (6+ months)
+{% endcomment %}
+
+{% assign today = 'now' | date: '%s' %}
+{% assign page_date = page.last_modified_date | default: page.date | date: '%s' %}
+{% assign days_old = today | minus: page_date | divided_by: 86400 %}
+
+{% if days_old <= 90 %}
+  {% assign freshness_color = 'green' %}
+  {% assign freshness_status = 'Fresh' %}
+  {% assign freshness_icon = '🟢' %}
+  {% assign bg_color = '#f0fdf4' %}
+  {% assign border_color = '#22c55e' %}
+{% elsif days_old <= 180 %}
+  {% assign freshness_color = 'orange' %}
+  {% assign freshness_status = 'Aging' %}
+  {% assign freshness_icon = '🟡' %}
+  {% assign bg_color = '#fffbeb' %}
+  {% assign border_color = '#f59e0b' %}
+{% else %}
+  {% assign freshness_color = 'red' %}
+  {% assign freshness_status = 'Needs Update' %}
+  {% assign freshness_icon = '🔴' %}
+  {% assign bg_color = '#fef2f2' %}
+  {% assign border_color = '#ef4444' %}
+{% endif %}
+
+<div style="display: block; margin: 1rem 0; padding: 8px 12px; background-color: {{ bg_color }}; border: 1px solid {{ border_color }}; border-radius: 6px; font-size: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <span>{{ freshness_icon }}</span>
+  <strong style="color: {{ border_color }};">{{ freshness_status }}</strong>
+  - Updated: {{ page.last_modified_date | default: page.date | date: "%b %d, %Y" }}
+  ({{ days_old }} days ago)
+</div> 

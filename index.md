@@ -1,64 +1,98 @@
 ---
-title: Executive Summary
+title: Welcome to Stream Systems
 layout: home
+nav_order: 1
+last_modified_date: 2025-07-17
 ---
-# Welcome to our Documentation Suite! 🚀
 
-{: .fs-3 }
+<div style="margin-bottom: 2rem; margin-top: 1rem; position: relative; z-index: 10;">
+{% include freshness_indicator.html %}
+</div>
 
-This is our new documentation suite built to support the development and maintenance of Stream Systems tools and infrastructure.
-{: .fs-6 .fw-300 } 
+<div class="hero-section">
+  <img src="/assets/images/uploads/streamlogo_transparent_bandw.png" alt="Stream Systems LLC Logo" class="hero-logo">
+  <h1>Stream Systems LLC</h1>
+  <p>Your comprehensive resource for Stream Systems financial technology solutions, inter-dealer brokerage services, and automated trading platform documentation.</p>
+  
+  <div style="margin-top: 2rem;">
+    <a href="components/" class="btn btn-primary" style="margin-right: 1rem;">Platform Documentation</a>
+    <a href="test.html" class="btn">API Quick Start Guide</a>
+  </div>
+</div>
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View on GitHub](https://github.com/propr1121/my-documentation){: .btn .fs-5 .mb-4 .mb-md-0 }
+{: .highlight-box }
+**Stream Systems LLC** - Revolutionizing **inter-dealer brokerage** through innovative **financial technology solutions** since 2018.
 
-- - -
+## About Stream Systems
+
+Stream Systems LLC is a leading **financial technology firm** specializing in **inter-dealer brokerage services** delivered through our proprietary **automated platform**. Headquartered in **New York City** with operations in **Palm Beach**, we serve **institutional clients** with cutting-edge **trading infrastructure** and **technology solutions**.
+
+### Our Technology Stack
+
+<div class="content-section" markdown="1">
+
+#### 🏛️ **Inter-Dealer Brokerage Platform**
+Advanced automated systems for institutional trading operations
+
+#### 📊 **Real-Time Analytics**  
+Comprehensive market data and trading analytics tools
+
+#### 🔒 **Security & Compliance**
+Enterprise-grade security with full regulatory compliance
+
+#### ⚡ **High-Performance Infrastructure**
+Low-latency trading systems built for institutional scale
+
+</div>
+
+## Platform Documentation
+
+### 📋 **Executive Resources**
+- **[Executive Overview](executive-overview.html)** - High-level platform summary for decision makers
+- **[Platform Architecture](platform-architecture.html)** - Technical architecture and integration overview
+- **[Implementation Roadmap](implementation-roadmap.html)** - Strategic modernization plan with timelines and budgets
+
+### 🔧 **Technical Documentation**
+- **[Platform Components](components/)** - Detailed documentation for all 8 system components
+- **[Technical Risk Assessment](technical-risk-assessment.html)** - Comprehensive security and performance analysis
+- **[API Quick Start Guide](test.html)** - Get started with Stream Systems APIs
+
+### 🏛️ **Core Platform Services**
+
+| Service | Component | Status | Documentation |
+|---------|-----------|--------|---------------|
+| **Order Matching & Execution** | FXOptEngine | ⚠️ Modernization needed | [View Details →](components/fxoptengine.html) |
+| **Post-Trade Processing** | MLOEngine | 🔴 Security fixes required | [View Details →](components/mloengine.html) |
+| **Real-Time Pricing** | PrePricer | ⚠️ Performance optimization | [View Details →](components/prepricer.html) |
+| **Trading Interface** | FXOUI | 🔴 Critical updates needed | [View Details →](components/fxoui.html) |
+
+## Quick Start for New Users
+
+{: .highlight-box }
+**For Business Stakeholders**: Start with the **[Executive Overview](executive-overview.html)** to understand platform capabilities and current status.
+
+{: .financial-data }
+**For Technical Teams**: Review the **[Technical Risk Assessment](technical-risk-assessment.html)** and **[Platform Components](components/)** for implementation details.
+
+### Platform Access Levels
+
+1. **Executive Overview** - Business capabilities and investment requirements
+2. **Architecture Review** - System integration and data flow understanding  
+3. **Component Analysis** - Detailed technical analysis of individual systems
+4. **Implementation Planning** - Roadmap for modernization and improvement
+
+## Support & Resources
 
 {: .note }
+**Need Help?** Our technical support team is available 24/5 during market hours to assist with platform integration and troubleshooting.
 
-> This is your live documentation site! You can edit these files to add your own content.
+### Quick Links
 
-## Getting started
+- 📞 **Technical Support**: Available during market hours
+- 💼 **Business Development**: [Contact our team](http://www.streamsystems.io)
+- 📧 **Documentation Feedback**: Help us improve these docs
+- 🔧 **System Status**: Check platform availability
 
-Your documentation site is now live and ready to use! Here's what you can do:
-
-### ✏️ **Add Your Content**
-
-* Edit this `index.md` file to customize your homepage
-* Create new `.md` files for additional documentation pages
-* Use [Markdown syntax](https://www.markdownguide.org/) to format your content
-
-### 📁 **Organize Your Documentation**
-
-* Add `nav_order: 2` to control page order in navigation
-* Use folders to group related documentation
-* Set `parent: "Folder Name"` to create hierarchical navigation
-
-### 🎨 **Customize Your Site**
-
-* Edit `_config.yml` to change site title, description, and colors
-* Choose between light and dark color schemes
-
-### 📝 **Example Page Structure**
-
-```markdown
----
-title: My New Page
-nav_order: 2
 ---
 
-# My New Page
-
-Your content here...
-```
-
-{: .highlight }
-Your site is automatically deployed to: **https://propr1121.github.io/my-documentation**
-
-## Features
-
-* ✅ **Built-in Search** - Fast client-side search functionality
-* ✅ **Responsive Design** - Works on desktop, tablet, and mobile
-* ✅ **Automatic Navigation** - Generated from your file structure
-* ✅ **Syntax Highlighting** - Beautiful code highlighting
-* ✅ **GitHub Integration** - Edit links and automatic deployment
+*© 2025 Stream Systems LLC. All rights reserved. This documentation is proprietary and confidential.*

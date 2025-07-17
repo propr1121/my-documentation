@@ -10,3 +10,203 @@
     });
   }
 </script>
+
+<!-- Main content footer for copyright -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add main content footer for copyright
+    const mainContent = document.querySelector('.main-content');
+    if (mainContent && !document.getElementById('custom-footer')) {
+      const customFooter = document.createElement('div');
+      customFooter.id = 'custom-footer';
+      customFooter.innerHTML = `
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e9ecef; text-align: center; color: #6c757d; font-size: 0.875rem; line-height: 1.5;">
+          <p style="margin: 0;">© 2025 Stream Systems LLC. All rights reserved. Financial technology solutions for inter-dealer brokerage services.</p>
+        </div>
+      `;
+      mainContent.appendChild(customFooter);
+    }
+  });
+</script>
+
+<!-- Comprehensive CSS fixes for purple colors and footer -->
+<style>
+/* Footer with logo styling */
+.site-footer {
+  background: var(--ss-light-gray) !important;
+  border-top: 1px solid var(--ss-border-light) !important;
+  padding: 0 !important;
+  font-size: 0.8rem !important;
+  color: #6c757d !important;
+  line-height: 1.4 !important;
+}
+
+.site-footer div {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 1rem !important;
+}
+
+.site-footer a {
+  color: #000000 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.site-footer a:hover {
+  color: #495057 !important;
+  text-decoration: underline !important;
+}
+
+.site-footer img {
+  height: 31px !important;
+  width: auto !important;
+  opacity: 0.7 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.site-footer img:hover {
+  opacity: 1 !important;
+}
+
+/* Main content footer styling */
+#custom-footer {
+  margin-top: 3rem !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid #e9ecef !important;
+  text-align: center !important;
+}
+
+#custom-footer p {
+  margin: 0 !important;
+  color: #6c757d !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Remove all purple/violet colors - ALL BUTTON STATES */
+.btn,
+.btn-primary,
+.btn:hover,
+.btn-primary:hover,
+.btn:focus,
+.btn-primary:focus,
+.btn:active,
+.btn-primary:active,
+.btn:visited,
+.btn-primary:visited,
+.btn.active,
+.btn-primary.active,
+.btn[aria-pressed="true"],
+.btn-primary[aria-pressed="true"],
+button,
+button:hover,
+button:focus,
+button:active,
+button:visited,
+a.btn,
+a.btn:hover,
+a.btn:focus,
+a.btn:active,
+a.btn:visited,
+a.btn.active {
+  background-color: var(--ss-accent-black) !important;
+  border-color: var(--ss-accent-black) !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* Hover state - slightly lighter */
+.btn:hover,
+.btn-primary:hover,
+button:hover,
+a.btn:hover {
+  background-color: var(--ss-dark-gray) !important;
+  border-color: var(--ss-dark-gray) !important;
+  color: white !important;
+}
+
+/* Fix dropdown arrows and navigation hover states */
+.navigation-list-child-list > .navigation-list-item > .navigation-list-link:hover,
+.navigation-list-item .navigation-list-link:hover,
+.navigation-list > .navigation-list-item > .navigation-list-link:hover {
+  background-color: #f8f9fa !important;
+  color: var(--ss-accent-black) !important;
+}
+
+/* Override any remaining purple/violet theme colors */
+:root {
+  --link-color: var(--ss-accent-black) !important;
+  --btn-primary-color: var(--ss-accent-black) !important;
+  --search-result-preview-color: var(--ss-text-secondary) !important;
+}
+
+/* Ensure buttons use black theme consistently */
+.btn, .btn-primary, button, input[type="submit"] {
+  background-color: var(--ss-accent-black) !important;
+  border-color: var(--ss-accent-black) !important;
+  color: white !important;
+}
+
+/* Clean footer styling */
+
+/* Force override of any theme purple colors */
+* {
+  --purple-000: var(--ss-light-gray) !important;
+  --purple-100: var(--ss-light-gray) !important;
+  --purple-200: var(--ss-medium-gray) !important;
+  --purple-300: var(--ss-dark-gray) !important;
+  --purple-400: var(--ss-accent-black) !important;
+  --purple-500: var(--ss-accent-black) !important;
+  --purple-600: var(--ss-accent-black) !important;
+  --purple-700: var(--ss-accent-black) !important;
+  --purple-800: var(--ss-accent-black) !important;
+  --purple-900: var(--ss-accent-black) !important;
+}
+
+/* Additional comprehensive color overrides */
+:root {
+  --btn-primary-color: var(--ss-accent-black) !important;
+  --link-color: var(--ss-accent-black) !important;
+  --link-color-hover: var(--ss-dark-gray) !important;
+  --link-color-visited: var(--ss-accent-black) !important;
+  --focus-color: var(--ss-dark-gray) !important;
+  --border-color: var(--ss-medium-gray) !important;
+}
+
+/* Catch any remaining purple elements */
+[style*="purple"],
+[class*="purple"],
+.text-purple-000,
+.text-purple-100,
+.text-purple-200,
+.text-purple-300,
+.text-purple-400,
+.text-purple-500,
+.text-purple-600,
+.text-purple-700,
+.text-purple-800,
+.text-purple-900,
+.bg-purple-000,
+.bg-purple-100,
+.bg-purple-200,
+.bg-purple-300,
+.bg-purple-400,
+.bg-purple-500,
+.bg-purple-600,
+.bg-purple-700,
+.bg-purple-800,
+.bg-purple-900 {
+  color: var(--ss-accent-black) !important;
+  background-color: var(--ss-light-gray) !important;
+  border-color: var(--ss-medium-gray) !important;
+}
+
+/* Override focus rings and outlines */
+*:focus,
+*:focus-visible {
+  outline: 2px solid var(--ss-dark-gray) !important;
+  outline-offset: 2px !important;
+}
+</style>

@@ -1,0 +1,124 @@
+{% comment %}
+Content Gaps Analysis Component
+Tracks documentation coverage across different user types and topics
+{% endcomment %}
+
+{% assign all_pages = site.pages | concat: site.documents %}
+
+{% comment %} Define required documentation matrix {% endcomment %}
+{% assign required_docs = 'executive-overview,platform-architecture,technical-risk-assessment,implementation-roadmap,api-documentation,user-guide,security-guide,deployment-guide,troubleshooting-guide,maintenance-guide' | split: ',' %}
+
+{% assign user_roles = 'Executive,Developer,Operations,Business,Support' | split: ',' %}
+
+<div class="content-gaps-analysis" style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 1.5rem; margin: 2rem 0;">
+  <h3 style="margin: 0 0 1rem 0; color: #374151; font-size: 1.1rem;">📋 Documentation Coverage Analysis</h3>
+  
+  <div class="coverage-summary" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+    {% assign existing_count = 0 %}
+    {% assign missing_docs = '' %}
+    
+    {% for required_doc in required_docs %}
+      {% assign doc_exists = false %}
+      {% for page in all_pages %}
+        {% assign page_slug = page.url | replace: '/', '' | replace: '.html', '' %}
+        {% if page_slug contains required_doc or page.title contains required_doc %}
+          {% assign doc_exists = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      
+      {% if doc_exists %}
+        {% assign existing_count = existing_count | plus: 1 %}
+      {% else %}
+        {% assign missing_docs = missing_docs | append: required_doc | append: ',' %}
+      {% endif %}
+    {% endfor %}
+    
+    {% assign coverage_percentage = existing_count | times: 100 | divided_by: required_docs.size %}
+    
+    <div class="coverage-card" style="background: white; padding: 1rem; border-radius: 6px; border-left: 4px solid {% if coverage_percentage >= 80 %}#22c55e{% elsif coverage_percentage >= 60 %}#f59e0b{% else %}#ef4444{% endif %};">
+      <div style="font-size: 1.5rem; font-weight: bold; color: {% if coverage_percentage >= 80 %}#22c55e{% elsif coverage_percentage >= 60 %}#f59e0b{% else %}#ef4444{% endif %};">{{ coverage_percentage }}%</div>
+      <div style="color: #6b7280; font-size: 0.875rem;">Documentation Coverage</div>
+      <div style="color: #374151; font-size: 0.75rem; margin-top: 0.25rem;">{{ existing_count }} of {{ required_docs.size }} core documents</div>
+    </div>
+    
+    <div class="freshness-card" style="background: white; padding: 1rem; border-radius: 6px; border-left: 4px solid #3b82f6;">
+      {% assign fresh_count = 0 %}
+      {% assign aging_count = 0 %}
+      {% assign stale_count = 0 %}
+      
+      {% for page in all_pages %}
+        {% if page.path contains '.md' %}
+          {% assign today = 'now' | date: '%s' %}
+          {% assign page_date = page.last_modified_date | default: page.date | date: '%s' %}
+          {% assign days_old = today | minus: page_date | divided_by: 86400 %}
+          
+          {% if days_old <= 30 %}
+            {% assign fresh_count = fresh_count | plus: 1 %}
+          {% elsif days_old <= 90 %}
+            {% assign aging_count = aging_count | plus: 1 %}
+          {% else %}
+            {% assign stale_count = stale_count | plus: 1 %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      
+      <div style="font-size: 1.5rem; font-weight: bold; color: #3b82f6;">{{ fresh_count }}</div>
+      <div style="color: #6b7280; font-size: 0.875rem;">Fresh Documents</div>
+      <div style="color: #374151; font-size: 0.75rem; margin-top: 0.25rem;">{{ aging_count }} aging, {{ stale_count }} need updates</div>
+    </div>
+  </div>
+  
+  {% assign missing_array = missing_docs | split: ',' %}
+  {% if missing_array.size > 1 %}
+  <div class="missing-docs" style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 1rem;">
+    <h4 style="margin: 0 0 0.5rem 0; color: #dc2626; font-size: 0.875rem; font-weight: 600;">🚨 Missing Critical Documentation:</h4>
+    <ul style="margin: 0; padding-left: 1.5rem; color: #374151; font-size: 0.875rem;">
+      {% for missing_doc in missing_array %}
+        {% unless missing_doc == '' %}
+          <li>{{ missing_doc | replace: '-', ' ' | capitalize }}</li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  <div class="role-matrix" style="margin-top: 1.5rem;">
+    <h4 style="margin: 0 0 1rem 0; color: #374151; font-size: 0.875rem; font-weight: 600;">📊 Documentation by User Role:</h4>
+    <div style="overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.75rem;">
+        <thead>
+          <tr style="background: #f3f4f6;">
+            <th style="padding: 0.5rem; text-align: left; border: 1px solid #e5e7eb; color: #374151;">Document Type</th>
+            {% for role in user_roles %}
+              <th style="padding: 0.5rem; text-align: center; border: 1px solid #e5e7eb; color: #374151;">{{ role }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for required_doc in required_docs %}
+            <tr style="{% cycle 'background: white;', 'background: #f9fafb;' %}">
+              <td style="padding: 0.5rem; border: 1px solid #e5e7eb; color: #374151; font-weight: 500;">{{ required_doc | replace: '-', ' ' | capitalize }}</td>
+              {% for role in user_roles %}
+                {% assign relevance = 'Low' %}
+                {% if required_doc contains 'executive' and role == 'Executive' %}{% assign relevance = 'High' %}{% endif %}
+                {% if required_doc contains 'technical' and role == 'Developer' %}{% assign relevance = 'High' %}{% endif %}
+                {% if required_doc contains 'api' and role == 'Developer' %}{% assign relevance = 'High' %}{% endif %}
+                {% if required_doc contains 'deployment' and role == 'Operations' %}{% assign relevance = 'High' %}{% endif %}
+                {% if required_doc contains 'troubleshooting' and role == 'Support' %}{% assign relevance = 'High' %}{% endif %}
+                
+                <td style="padding: 0.5rem; border: 1px solid #e5e7eb; text-align: center;">
+                  {% if relevance == 'High' %}
+                    <span style="background: #dcfce7; color: #166534; padding: 0.125rem 0.375rem; border-radius: 3px; font-size: 0.625rem;">{{ relevance }}</span>
+                  {% else %}
+                    <span style="background: #f3f4f6; color: #6b7280; padding: 0.125rem 0.375rem; border-radius: 3px; font-size: 0.625rem;">{{ relevance }}</span>
+                  {% endif %}
+                </td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> 
