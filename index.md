@@ -4,10 +4,10 @@ layout: home
 ---
 # Welcome to our Documentation Suite! 🚀
 
-{: .fs-9 }
+{: .fs-3 }
 
-This is your new documentation suite built to 
-{: .fs-6 .fw-300 } support the development and maintenance of Stream Systems tools and infrastructure.
+This is our new documentation suite built to support the development and maintenance of Stream Systems tools and infrastructure.
+{: .fs-6 .fw-300 } 
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View on GitHub](https://github.com/propr1121/my-documentation){: .btn .fs-5 .mb-4 .mb-md-0 }
